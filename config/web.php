@@ -3,13 +3,13 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'escritor',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'kCJ-vxCsMGHweOLhqkuRJ3Li6M6Z93WK',
+            'cookieValidationKey' => 'kCJ-vxCsMGHweOLhqkuRJ3di6M6Z93WK',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -38,14 +38,20 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+        // 'urlManager' => [
+		//     'class' => 'yii\web\UrlManager',
+		//     'showScriptName' => false,
+		// 	'enablePrettyUrl' => true,
+		// 	'rules' => [
+        //         '<controller:\w+>/<id:\d+>'             => '<controller>/view',
+        //         '<controller:\w+>/<action>/<id:\d+>'    => '<controller>/<action>',
+		// 	    '<controller:[\w-]+>/<action>/<id:\d+>' => '<controller>/<action>',
+        //         '<controller:\w+>/<action:\w+>'         => '<controller>/<action>',
+		// 		'<controller:[\w-]+>/update/<id:\d+>'   => '<controller>/update',
+		// 		'<controller:[\w-]+>/delete/<id:\d+>'   => '<controller>/delete',
+    	// 		'<controller:[\w-]+>/<id:\d+>'          => '<controller>/view',
+		// 	],
+		// ],
     ],
     'params' => $params,
     'modules' => [

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\data\ArrayDataProvider;
 
 class SiteController extends Controller
 {
@@ -60,7 +61,24 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        $dirs = array_filter(glob('escritos/*'), 'is_dir');
+        $diretorios = [];
+        foreach ($dirs as $key => $dir) {
+            $diretorios[$key]['Projeto'] = substr($dir, 9);
+        }
+        $provider = new ArrayDataProvider([
+            'allModels' => $diretorios,
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+            // 'sort' => [
+            //     'attributes' => ['id', 'name'],
+            // ],
+        ]);
+        return $this->render('index', [
+            'provider' => $provider,
+        ]);
     }
 
     /**
