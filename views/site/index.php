@@ -14,14 +14,18 @@ $this->title = 'My Yii Application';
     ?>
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Escritor</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p class="lead">Este é um gerenciador de projetos de escrita.</p>
+        <p>Admnistre seus projetos de escrita em repositórios Git separados. Com esta ferramenta você pode editar e commitar a partir de qualquer dispositivo usando arquivos Markdown.</p>
     </div>
 
-    <div class="body-content">
+    <?php
+    $dirs = array_filter(glob('escritos/*'), 'is_dir');
+    print_r($dirs);
+    ?>
+
+    <!-- <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
@@ -56,5 +60,5 @@ $this->title = 'My Yii Application';
             </div>
         </div>
 
-    </div>
+    </div> -->
 </div>
