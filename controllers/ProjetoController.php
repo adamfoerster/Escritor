@@ -13,8 +13,10 @@ class ProjetoController extends \yii\web\Controller
         // echo '<pre>';print_r($files);exit;
         foreach ($files as $key => $arq) {
             $arq = explode('/', $arq);
-            if ($arq[2] != '.git')
+            if ($arq[2] != '.git'){
                 $arqs[$key]['arquivo'] = $arq[2];
+                $arqs[$key]['project'] = $pasta;
+            }
         }
         $provider = new ArrayDataProvider([
             'allModels' => $arqs,
@@ -25,7 +27,10 @@ class ProjetoController extends \yii\web\Controller
             //     'attributes' => ['id', 'name'],
             // ],
         ]);
-        return $this->render('index', ['provider' => $provider]);
+        return $this->render('index', [
+            'projeto' => $pasta,
+            'provider' => $provider
+        ]);
     }
 
 }

@@ -1,17 +1,12 @@
 <?php
-use kartik\markdown\MarkdownEditor;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Escritor';
 ?>
 <div class="site-index">
-    <!-- <?=MarkdownEditor::widget([
-        'name' => 'markdown',
-        // 'value' => $value,
-    ])?> -->
 
     <div class="jumbotron">
         <h1>Escritor</h1>
